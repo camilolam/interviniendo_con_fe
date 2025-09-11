@@ -2,6 +2,7 @@
 
  :root {
       --color-primario: rgba(247, 190, 247, 0.4); 
+      --color-fondo: rgb(255, 238, 255);
       --color-primario-oscuro: rgb(247, 190, 247);
       --color-primario-oscuro2: rgb(49, 14, 49)
 }
@@ -14,13 +15,14 @@ html {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    background-color: var(--color-fondo);
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
 .contenedor {
-    width: 90%; 
+    width: 80%; 
     margin: 0 auto;
 }
 
@@ -78,28 +80,23 @@ html {
 
 }
 
-
 .border_white{
     border-top: 0.135rem solid rgb(100,100,100);
     border-bottom: 0.135rem solid rgb(100,100,100);
 }
 
-
-
 .hero{
-    background-image: url(../source/abrazo_oscuro.png);
+    background-image: url(../source/fondo_op_oscuro.png);
     background-repeat: no-repeat;
 
-    background-size: 100%;
-    height: 120rem;
+    background-size: cover;
+    height: 50rem;
 }
 
 @media (min-width: 768px) {
     .hero{
-        background-image: url(../source/fondo_op_oscuro.png);
-        background-repeat: no-repeat;
         background-size:100%;
-        height: 60rem;
+        height: 70rem;
     }
 
 }
@@ -153,6 +150,17 @@ html {
     margin-top: 0;
 }
 
+@media (max-width: 400px) {
+    .main_nav-btn{
+        text-decoration: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 3rem;
+    }
+}
+
+
 @media (min-width: 768px) {
     .main_nav{
         flex-direction: row;
@@ -185,20 +193,26 @@ html {
     .main_nav-links a:last-of-type{
         margin-right: 0;
     }
+
+    .main_nav-btn{
+        display: none;
+    }
 }
 
 .nav{
     background-color: var(--color-primario);
-    animation:move_x 1s linear 1 normal both;
+    animation:
+        move_x 1.5s linear 1 normal both,
+        appear 1.5s linear 1 normal both;
 }
 
 @keyframes move_x {
     0%{
-        transform: translateY(-3rem);
+        transform: translateY(-10rem);
     }
 
     25%{
-        transform: translateY(-2rem);
+        transform: translateY(-5rem);
     }
 
     50%{
@@ -222,10 +236,30 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation:
+        move_x 2s linear 1 normal both,
+        appear 1.5s linear 1 normal both;
+    opacity: 0;
+
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 .header_title h1{
     color: var(--color-primario-oscuro);
+    font-size: 3rem;
 }
 
 .header_title h1 span{
@@ -261,4 +295,90 @@ html {
         font-size: 3rem;
         margin-left: 30rem;
     }
+}
+/****************** Sección principal **************************/
+
+/*profesional*/
+
+.section_profesional{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profesional{
+    position: relative;
+    margin: 10rem 0;
+}
+
+.profesional img{
+    height: 35rem;
+    border-radius: 2rem;
+
+}
+
+.profesional_info{
+    position: absolute;
+    bottom: -1rem;
+    left: 5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-primario-oscuro);
+    width: 20rem;
+    text-align: center;
+    border-radius: 1rem;
+    color: var(--color-primario-oscuro2);
+
+    box-shadow: 0 4px 8px var(--color-primario-oscuro);
+}
+
+.profesional_info p{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+.profesional_info p span{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.profesional_bio-title{
+    font-size: 4rem;
+    color: var(--color-primario-oscuro2);
+    font-weight: bold;
+}
+
+.profesional_bio-text{
+    font-size: 1.5rem;
+    color: var(--color-primario-oscuro2);
+}
+
+.profesional_social{
+    font-size: 5rem;
+    text-decoration: none;
+}
+
+.profesional_social a{
+    color: var(--color-primario-oscuro2);
+}
+
+@media (min-width: 768px) {
+
+    .section_profesional{
+        flex-direction: row;
+    }
+
+    .profesional img{
+        margin-right: 10rem;
+    }
+
+    .profesional_info{
+        left: 10rem;
+    }
+
+    .profesional_social{
+        font-size: 5rem;
+        text-decoration: none;
+    }
+
 }
