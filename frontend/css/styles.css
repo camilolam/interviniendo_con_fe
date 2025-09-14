@@ -8,7 +8,10 @@
       --font-title: 2rem;
       --font-title-generic:5rem;
       --font-title-mobile:3rem;
-      --font-text: 2.5rem;
+      --font-text: 1.8rem;
+
+      --font-cursive: "Caveat", cursive;
+      --font-monserrat:"Montserrat", sans-serif;
 }
 
 html {
@@ -20,11 +23,9 @@ html {
     font-weight: 400;
     font-style: normal;*/
 
-    font-family: "Caveat", cursive;
+    font-family: var(--font-monserrat   );
     font-optical-sizing: auto;
     font-style: normal;
-
-    
     background-color: var(--color-fondo);
 }
 *, *:before, *:after {
@@ -46,7 +47,7 @@ html {
 .btn{
     text-decoration: none;
     color: white;
-    font-size: 2.3rem;
+    font-size: var(--font-text);
     padding: 1rem;
 }
 
@@ -69,7 +70,7 @@ html {
 
 .header_contact p{
     margin: 0.5rem 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -122,6 +123,7 @@ html {
     align-items: center;
     color: white;
     font-size: var(--font-title);
+    font-family: var(--font-cursive);
     text-align: center;
 }
 
@@ -262,9 +264,7 @@ html {
 .header_title h1{
     color: var(--color-primario-oscuro);
     font-size: var(--font-title-generic);
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+    font-family: var(--font-cursive);
 }
 
 .header_title p{
@@ -354,7 +354,7 @@ html {
     border-radius: 1rem;
     color: var(--color-primario-oscuro2);
     box-shadow: 0 4px 8px var(--color-primario-oscuro);
-
+    font-family: var(--font-cursive);
     transition: scale 0.2s ease;
 }
 
@@ -393,9 +393,10 @@ html {
 
 
 .profesional_bio-title{
-    font-size: 5rem;
+    font-size: var(--font-title-generic);
     color: var(--color-primario-oscuro2);
     font-weight: bold;
+    font-family: var(--font-cursive);
 }
 
 .profesional_bio-text{
