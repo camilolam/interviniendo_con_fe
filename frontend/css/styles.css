@@ -1,19 +1,4 @@
 /* Estilos para la aplicación de interviniendo con fe */
-
-
-/* Evita desbordamiento horizontal */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Ajusta imágenes */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
  :root {
       --color-primario: rgba(247, 190, 247, 0.4); 
       --color-fondo: rgb(253, 246, 253);
@@ -48,8 +33,9 @@ html {
     box-sizing: inherit;
 }
 
+
 .contenedor {
-    width: 80%; 
+    width: 70%; 
     margin: 0 auto;
 }
 
