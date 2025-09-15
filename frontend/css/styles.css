@@ -1,5 +1,19 @@
 /* Estilos para la aplicación de interviniendo con fe */
 
+
+/* Evita desbordamiento horizontal */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ajusta imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
  :root {
       --color-primario: rgba(247, 190, 247, 0.4); 
       --color-fondo: rgb(253, 246, 253);
@@ -16,6 +30,7 @@
 
 html {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-size: 62.5%; /* 1 rem = 10px */   
     /*font-family: "Source Code Pro", monospace;
@@ -27,6 +42,7 @@ html {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--color-fondo);
+    width: 100%;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -49,10 +65,33 @@ html {
     color: white;
     font-size: var(--font-text);
     padding: 1rem;
+    border-radius: 1rem;
 }
 
 .btn:hover{ 
     animation:btn_animation 500ms linear 1 normal both;
+}
+
+.btn_oscuro{
+    text-decoration: none;
+    color: var(--color-primario-oscuro2);
+    font-size: var(--font-text);
+    padding: 1rem;
+    background-color: var(--color-primario-oscuro);
+    border-radius: 1rem;
+}
+
+.btn_oscuro:hover{ 
+    animation:btn_animation_oscuro 500ms linear 1 normal both;
+}
+
+@keyframes btn_animation_oscuro {
+
+    100%{
+        background-color: var(--color-primario-oscuro2);
+        border-radius: 1rem;
+        color: white;
+    }
 }
 
 @keyframes btn_animation {
@@ -510,6 +549,6 @@ html {
 
 .section_servicios-card a{
     display: block;
-    background-color: var(--color-primario-oscuro2);
+    background-color: var(--color-primario-oscuro);
     margin-top: 2rem;
 }
