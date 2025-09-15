@@ -338,7 +338,7 @@ html {
 
 .profesional{
     position: relative;
-    margin: 10rem 0;
+    margin: 10rem 0 5rem 0;
     animation:scroll_animation 500ms linear 1 normal both;
     animation-timeline: view();
     animation-range: entry 25% cover 50%;
@@ -424,6 +424,7 @@ html {
     color: var(--color-primario-oscuro2);
     font-weight: bold;
     font-family: var(--font-cursive);
+
 }
 
 .profesional_bio-text{
