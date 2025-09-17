@@ -537,16 +537,6 @@ html {
    scale: 1.1;
 }
 
-.section_servicios-card .card-price{
-    font-size: 3rem ;
-    padding: 1rem;
-    margin: 0.5rem auto;
-    background-color:var(--color-verde-pastel); /*rgba(251, 255, 5, 0.356);*/
-    width: 50%;
-    border-radius: 2rem;
-    font-family: var(--font-cursive);
-}
-
 .section_servicios-card i{
     padding: 4rem;
     background-color: var(--color-azul-pastel);
