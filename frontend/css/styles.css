@@ -4,6 +4,9 @@
       --color-fondo: rgb(253, 246, 253);
       --color-primario-oscuro: rgb(247, 190, 247);
       --color-primario-oscuro2: rgb(49, 14, 49);
+      --color-primario-oscuro2-transparente: rgba(250, 151, 250, 0.7);
+      --color-azul-pastel:rgb(204, 220, 252);
+      --color-verde-pastel: rgb(210, 255, 210);
       --font-title: 2rem;
       --font-title-generic:5rem;
       --font-title-mobile:3rem;
@@ -41,7 +44,7 @@ html {
 
 @media (min-width: 768px) {
     .contenedor {
-        width: min(70%, 100rem); 
+        width:  100rem; 
         margin: 0 auto;
     }
 }
@@ -526,6 +529,22 @@ html {
     border-radius: 1rem;
     box-shadow: 0 0 1rem var(--color-primario-oscuro);
     background-color: white;
+
+    transition: scale 0.5s ease;
+}
+
+.section_servicios-card:hover{
+   scale: 1.1;
+}
+
+.section_servicios-card i{
+    padding: 4rem;
+    background-color: var(--color-azul-pastel);
+    color: white;
+    font-size: 7rem;
+    margin: 0;
+    border-radius: 50%;
+    text-shadow: 0 6px 8px rgba(1, 1, 1, 0.5);
 }
 
 .section_servicios-card h2{
@@ -538,4 +557,51 @@ html {
     display: block;
     background-color: var(--color-primario-oscuro);
     margin-top: 2rem;
+}
+
+.section_servicios-card p{
+    font-size: 1.3rem ;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+.section_servicios-card p:first-of-type{
+    margin-top: 1rem;
+}
+
+.section_servicios-card span{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.section_servicios-card .card-des{
+        height: 6rem;
+        padding: 1rem 0;
+}
+/******************** Footer **************************/
+
+.footer{
+    background-color: white;
+    color: var(colo);
+    text-align: center;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.footer_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    gap: 2rem;
+    border-bottom: 0.08rem solid var(--color-primario-oscuro2-transparente);
+}
+
+.footer_info-text p{
+    margin: 0;
+
+}
+
+.footer img{
+    height: 7rem;
 }
