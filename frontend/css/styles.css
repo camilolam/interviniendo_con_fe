@@ -605,3 +605,83 @@ html {
 .footer img{
     height: 7rem;
 }
+
+/****************+secction testimonios ********************************/
+
+.section_testimonios{
+    
+}
+
+.testimonios_title{
+    font-size: 3rem;
+    color: var(--color-primario-oscuro2);
+    font-weight: bold;
+    font-family: var(--font-cursive);
+    text-align: center;
+
+    animation:scroll_animation_bio 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 50%;
+    view-timeline-axis: inline;
+}
+
+.testimonios_title-text{
+    font-size: var(--font-text);
+    padding: 1rem 2rem;
+    background-color: var(--color-azul-pastel);
+    border-radius: 1rem;
+    text-align: center;
+    color: var(--color-primario-oscuro2);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+
+    .testimonios_title{
+        font-size: var(--font-title-generic);
+    }
+
+
+    .testimonios_title-text{
+        width: 80%;
+
+    }
+}
+
+.testimonios_info{
+    display: grid;
+    grid-template-columns: 100%;
+    margin-top: 3rem;
+    
+}
+
+@media (min-width: 768px) {
+    .testimonios_info{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        margin-top: 3rem;
+    }
+}
+
+.testimonio_ppal{
+    background-color: aqua;
+    margin: auto;
+    color: var(--color-primario-oscuro2);
+    transition: scale 0.5s ease;
+    border-radius: 1rem;
+    padding: 2rem ;
+}
+
+.testimonio_ppal iframe{
+    height:16.9rem;
+    width: 100%;
+    border-radius: 1rem; 
+}
+
+.testimonio_ppal:hover{
+    scale: 1.5;
+}
+
+.testimonios_varios{
+    background-color: bisque;
+}
