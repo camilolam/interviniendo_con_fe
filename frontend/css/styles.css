@@ -8,12 +8,20 @@
       --color-azul-pastel:rgb(204, 220, 252);
       --color-verde-pastel: rgb(210, 255, 210);
       --font-title: 2rem;
+      --font_subtitle: 3.5rem;
       --font-title-generic:5rem;
-      --font-title-mobile:3rem;
+      --font-title-mobile:2.5rem;
       --font-text: 1.5rem;
 
+      --font-story: "Story Script", sans-serif;
       --font-cursive: "Caveat", cursive;
       --font-monserrat:"Montserrat", sans-serif;
+}
+
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
@@ -140,7 +148,7 @@ html {
 }
 
 .main_nav{
-    padding:1rem 0;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,8 +159,9 @@ html {
     align-items: center;
     color: white;
     font-size: var(--font-title);
-    font-family: var(--font-cursive);
+    font-family: var(--font-story);
     text-align: center;
+    font-weight:lighter;
 }
 
 .main_nav-name h3{
@@ -188,6 +197,7 @@ html {
         text-decoration: none;
         background: none;
         border: none;
+        font-size: 4rem;
         color: white;
     }
 }
@@ -234,7 +244,7 @@ html {
 
 .nav{
     
-    background-color: var(--color-primario);
+    /*background-color: var(--color-primario);*/
     animation:
         move_x 1.5s linear 1 normal both,
         appear 1.5s  linear 1 normal both;
@@ -263,6 +273,7 @@ html {
 }
 
 .header_title{
+    
     display: flex;
     margin-top: 5rem;
     flex-direction: column;
@@ -292,8 +303,8 @@ html {
 .header_title h1{
     color: var(--color-primario-oscuro);
     font-size: var(--font-title-generic);
-    font-family: var(--font-cursive);
-    text-shadow: 0 0.2rem 8px var(--color-primario);
+    font-family: var(--font-story);
+    /*text-shadow: 0 0.2rem 8px var(--color-primario);*/
 }
 
 .header_title p{
@@ -423,10 +434,10 @@ html {
 
 
 .profesional_bio-title{
-    font-size: var(--font-title-generic);
+    font-size: var(--font_subtitle);
     color: var(--color-primario-oscuro2);
     font-weight: bold;
-    font-family: var(--font-cursive);
+    font-family: var(--font-story);
 
 }
 
@@ -436,11 +447,12 @@ html {
 }
 
 .profesional_social{
-    font-size: 5rem;
+    
     text-decoration: none;
 }
 
 .profesional_social a{
+    font-size: 3rem;
     color: var(--color-primario-oscuro2);
 }
 
@@ -497,6 +509,7 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
+    margin: 3rem 0;
 }
 
 @media (min-width: 768px) {
@@ -507,11 +520,10 @@ html {
 }
 
 .section_servicios-title{
-    font-size: var(--font-title-generic);
-    font-family: var(--font-cursive);
+    font-size: var(--font_subtitle);
+    font-family: var(--font-story);
     text-align: center;
     color: var(--color-primario-oscuro2);
-    margin: 0 0 4rem 0;
     animation:scroll_animation_bio 500ms linear 1 normal both;
     animation-timeline: view();
     animation-range: entry 25% cover 50%;
@@ -519,17 +531,11 @@ html {
 }
 
 .section_servicios-card{
-    /*border: 0.01rem solid var(--color-primario-oscuro2);*/
     animation:scroll_animation 500ms linear 1 normal both;
     animation-timeline: view();
     animation-range: entry 25% cover 40%;
     view-timeline-axis: inline;
-    padding: 2rem 1.5rem;
     text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem var(--color-primario-oscuro);
-    background-color: white;
-
     transition: scale 0.5s ease;
 }
 
@@ -542,14 +548,13 @@ html {
     background-color: var(--color-azul-pastel);
     color: white;
     font-size: 7rem;
-    margin: 0;
     border-radius: 50%;
     text-shadow: 0 6px 8px rgba(1, 1, 1, 0.5);
 }
 
 .section_servicios-card h2{
     font-size: var(--font-title-mobile);
-    font-family: var(--font-cursive);
+    font-family: var(--font-story);
     color: var(--color-primario-oscuro2);
 }
 
@@ -561,25 +566,13 @@ html {
 
 .section_servicios-card p{
     font-size: 1.3rem ;
-    margin: 0;
     text-align: center;
-}
-
-
-
-.section_servicios-card p:first-of-type{
-    margin-top: 1rem;
-}
+}   
 
 .section_servicios-card span{
     font-weight: bold;
-    font-size: 1.4rem;
 }
 
-.section_servicios-card .card-des{
-        height: 6rem;
-        padding: 1rem 0;
-}
 /******************** Footer **************************/
 
 .footer{
