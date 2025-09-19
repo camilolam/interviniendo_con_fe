@@ -4,7 +4,7 @@
       --color-fondo: rgb(253, 246, 253);
       --color-primario-oscuro: rgb(247, 190, 247);
       --color-primario-oscuro2: rgb(49, 14, 49);
-      --color-primario-oscuro2-transparente: rgba(250, 151, 250, 0.7);
+      --color-primario-oscuro2-transparente: rgba(49, 14, 49, 0.6);
       --color-azul-pastel:rgb(204, 220, 252);
       --color-verde-pastel: rgb(210, 255, 210);
       --font-title: 2rem;
@@ -137,7 +137,7 @@ html {
     background-repeat: no-repeat;
 
     background-size: cover;
-    height: 50rem;
+    height: 90rem;
 }
 
 @media (min-width: 768px) {
@@ -148,10 +148,10 @@ html {
 }
 
 .main_nav{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2rem;
 }
 
 .main_nav-name{
@@ -171,10 +171,10 @@ html {
 }
 
 .main_nav-img{
-    height: 4rem;
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
+    height: 7rem;
+    /*text-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);*/
     border-radius: 50%;
-    background-color: white;
+    background-color:var(--color-primario-oscuro);
 }
 
 .main_nav-links{
@@ -192,7 +192,7 @@ html {
     margin-top: 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .main_nav-btn{
         text-decoration: none;
         background: none;
@@ -201,7 +201,6 @@ html {
         color: white;
     }
 }
-
 
 @media (min-width: 768px) {
     .main_nav{
@@ -215,13 +214,6 @@ html {
 
     .main_nav-name h3{
         display: block;
-    }
-
-    .main_nav-img{
-        height: 8rem;
-        box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
-        border-radius: 50%;
-        background-color: white;
     }
 
     .main_nav-links{
@@ -486,7 +478,7 @@ html {
 /*tarjeta, diseño estandar para cualquier página*/
 
 .section_servicios{
-    background-color: var(--color-primario);
+    background-color: var(--color-primario-oscuro2);/*var(--color-primario);*/
     margin-top: 3rem;
     padding: 4rem 0;
     animation:servicios_animation 500ms linear 1 normal both;
@@ -523,30 +515,31 @@ html {
     font-size: var(--font_subtitle);
     font-family: var(--font-story);
     text-align: center;
-    color: var(--color-primario-oscuro2);
+    color: var(--color-primario-oscuro);/*var(--color-primario-oscuro2);*/
     animation:scroll_animation_bio 500ms linear 1 normal both;
     animation-timeline: view();
-    animation-range: entry 25% cover 50%;
+    animation-range: entry 45% cover 50%;
     view-timeline-axis: inline;
 }
 
 .section_servicios-card{
     animation:scroll_animation 500ms linear 1 normal both;
     animation-timeline: view();
-    animation-range: entry 25% cover 40%;
+    animation-range: entry 25% cover 50%;
     view-timeline-axis: inline;
     text-align: center;
     transition: scale 0.5s ease;
+    color: white;
 }
 
 .section_servicios-card:hover{
-   scale: 1.1;
+   scale: 1.2;
 }
 
 .section_servicios-card i{
     padding: 4rem;
-    background-color: var(--color-azul-pastel);
-    color: white;
+    /*background-color: var(--color-azul-pastel);*/
+    color:var(--color-primario-oscuro); /*white;*/
     font-size: 7rem;
     border-radius: 50%;
     text-shadow: 0 6px 8px rgba(1, 1, 1, 0.5);
@@ -572,6 +565,33 @@ html {
 .section_servicios-card span{
     font-weight: bold;
 }
+
+.servicios-btn{
+    background-color: var(--color-primario);
+    text-align: center;
+    margin: 2rem auto;
+    animation:btn-servicios-animation 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 35%;
+}
+
+@keyframes btn-servicios-animation {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .servicios-btn{
+        grid-column: 2 / 3;
+    }
+
+}
+
 
 /******************** Footer **************************/
 
