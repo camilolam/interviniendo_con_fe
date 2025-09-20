@@ -52,7 +52,7 @@ html {
 
 @media (min-width: 768px) {
     .contenedor {
-        width:  100rem; 
+        width:  110rem; 
         margin: 0 auto;
     }
 }
@@ -626,11 +626,12 @@ html {
 }
 
 .testimonios_title{
-    font-size: 3rem;
+    font-size: var(--font_subtitle);
     color: var(--color-primario-oscuro2);
     font-weight: bold;
-    font-family: var(--font-cursive);
+    font-family: var(--font-story);
     text-align: center;
+
 
     animation:scroll_animation_bio 500ms linear 1 normal both;
     animation-timeline: view();
@@ -640,8 +641,8 @@ html {
 
 .testimonios_title-text{
     font-size: var(--font-text);
-    padding: 1rem 2rem;
-    background-color: var(--color-azul-pastel);
+    padding: 2rem;
+    background-color: var(--color-primario);
     border-radius: 1rem;
     text-align: center;
     color: var(--color-primario-oscuro2);
@@ -650,14 +651,10 @@ html {
 
 @media (min-width: 768px) {
 
-    .testimonios_title{
-        font-size: var(--font-title-generic);
-    }
-
 
     .testimonios_title-text{
         width: 80%;
-
+        
     }
 }
 
@@ -665,7 +662,6 @@ html {
     display: grid;
     grid-template-columns: 100%;
     margin-top: 3rem;
-    
 }
 
 @media (min-width: 768px) {
@@ -697,4 +693,40 @@ html {
 
 .testimonios_varios{
     background-color: bisque;
+}
+
+.testimonio-btn{
+    display: block;
+    background-color: var(--color-primario);
+    color: var(--color-primario-oscuro2);
+    
+}
+
+.testimonios_title-text a{
+    animation: arrow 500ms linear 1 normal both infinite;
+}
+
+@keyframes arrow {
+    0%{
+
+        transform: translateX(3rem);
+    }
+
+    50%{
+        transform: translateX(2rem);
+    }
+
+    100%{
+        transform: translateX(0rem);
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonio-btn{
+        
+        margin:0;
+        margin-left: 80%;
+        width: 20%;
+
+    }
 }
