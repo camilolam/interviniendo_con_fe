@@ -539,23 +539,12 @@ html {
 .section_servicios-card i{
     padding: 4rem;
     /*background-color: var(--color-azul-pastel);*/
-    color:var(--color-primario-oscuro); /*white;*/
+    color:white;/*var(--color-primario-oscuro); *//*white;*/
     font-size: 7rem;
     border-radius: 50%;
     text-shadow: 0 6px 8px rgba(1, 1, 1, 0.5);
 }
 
-.section_servicios-card h2{
-    font-size: var(--font-title-mobile);
-    font-family: var(--font-story);
-    color: var(--color-primario-oscuro2);
-}
-
-.section_servicios-card a{
-    display: block;
-    background-color: var(--color-primario-oscuro);
-    margin-top: 2rem;
-}
 
 .section_servicios-card p{
     font-size: 1.3rem ;
@@ -620,10 +609,6 @@ html {
 }
 
 /****************+secction testimonios ********************************/
-
-.section_testimonios{
-    
-}
 
 .testimonios_title{
     font-size: var(--font_subtitle);
@@ -702,22 +687,24 @@ html {
     
 }
 
-.testimonios_title-text a{
-    animation: arrow 500ms linear 1 normal both infinite;
+.arrow_animation{
+     animation-name: arrow;
+    animation-duration: 1s, 1s;
+    animation-iteration-count: infinite, infinite; /* Infinito para ambas */
+    animation-timing-function: ease-in-out, linear; /* Timing function para cada una */
+    animation-delay: 0s, 1s; /* Puedes añadir un delay si quieres */
+    animation-fill-mode: both, both;
+
 }
 
 @keyframes arrow {
     0%{
-
-        transform: translateX(3rem);
+        opacity: 0;
+        transform: translateX(-3rem);
     }
-
-    50%{
-        transform: translateX(2rem);
-    }
-
     100%{
-        transform: translateX(0rem);
+        opacity: 1;
+        transform: translateX(-1rem);
     }
 }
 
@@ -729,4 +716,61 @@ html {
         width: 20%;
 
     }
+}
+
+
+/************************ pruebas ****************************/
+/* Estilos por defecto de la modal (oculta) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Oculta la modal por defecto */
+    animation:open_modal 400ms linear 1 normal both;
+    border-radius: 1rem;
+}
+
+/* ------------------------------------------- */
+/* CLASE PARA MOSTRAR LA MODAL */
+/* ------------------------------------------- */
+.modal-open {
+  display: block; /* Muestra la modal cuando se activa */
+}
+
+@keyframes open_modal {
+    0%{
+        opacity: 0;    
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Contenido de la modal */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cerrar {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.cerrar:hover{
+    cursor: pointer;
 }
