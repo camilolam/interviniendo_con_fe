@@ -194,6 +194,8 @@ html {
 
 @media (max-width: 600px) {
     .main_nav-btn{
+        position: absolute;
+        left: 10%;
         text-decoration: none;
         background: none;
         border: none;
@@ -615,7 +617,6 @@ html {
     margin: 4rem 0 7rem 0;
     display: flex;
     flex-direction: column;
-
 }
 
 .testimonios_title{
@@ -627,7 +628,7 @@ html {
 
     animation:scroll_animation_bio 500ms linear 1 normal both;
     animation-timeline: view();
-    animation-range: entry 25% cover 50%;
+    animation-range: entry 45% cover 50%;
     view-timeline-axis: inline;
 }
 
@@ -639,6 +640,9 @@ html {
     text-align: center;
     color: var(--color-primario-oscuro2);
     margin: 0 auto;
+    animation:scroll_animation 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 2% cover 30%;
 }
 
 .testimonio-btn{
@@ -699,6 +703,10 @@ html {
     padding: 0 3rem;
     gap: 3rem;
     margin: 3rem 0;
+    animation:scroll_animation_bio 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+    view-timeline-axis: inline;
 }
 
 .testimonio_info img{
@@ -736,7 +744,9 @@ html {
     /* CLASE PARA MOSTRAR LA MODAL */
     /* ------------------------------------------- */
     .modal-open {
-    display: block; /* Muestra la modal cuando se activa */
+        display: block; /* Muestra la modal cuando se activa */
+        z-index: 1;
+        
     }
 
     @keyframes open_modal {
@@ -782,10 +792,15 @@ html {
     /* La posición es clave para que el 'after' se posicione con respecto al padre */
     position: relative; 
     width: 100%;
- 
+    
     background-color: var(--color-primario-oscuro); /* Color de fondo del cuadro */
     padding: 20px;
     border-radius: 1rem;
+
+    animation:scroll_animation_bio 500ms linear 1 normal both;
+        animation-timeline: view();
+        animation-range: entry 30% cover 50%;
+        view-timeline-axis: inline;
 }
 
 /* El pseudo-elemento que crea el triángulo */
