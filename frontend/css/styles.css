@@ -446,6 +446,7 @@ html {
 .profesional_social a{
     font-size: 3rem;
     color: var(--color-primario-oscuro2);
+    transition: color 0.5s ease;
 }
 
 .profesional_social a:hover{
@@ -610,13 +611,19 @@ html {
 
 /****************+secction testimonios ********************************/
 
+.section_testimonios{
+    margin: 4rem 0 7rem 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
 .testimonios_title{
     font-size: var(--font_subtitle);
     color: var(--color-primario-oscuro2);
     font-weight: bold;
     font-family: var(--font-story);
     text-align: center;
-
 
     animation:scroll_animation_bio 500ms linear 1 normal both;
     animation-timeline: view();
@@ -634,52 +641,6 @@ html {
     margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-
-
-    .testimonios_title-text{
-        width: 80%;
-        
-    }
-}
-
-.testimonios_info{
-    display: grid;
-    grid-template-columns: 100%;
-    margin-top: 3rem;
-}
-
-@media (min-width: 768px) {
-    .testimonios_info{
-        display: grid;
-        grid-template-columns: 40% 60%;
-        margin-top: 3rem;
-    }
-}
-
-.testimonio_ppal{
-    background-color: aqua;
-    margin: auto;
-    color: var(--color-primario-oscuro2);
-    transition: scale 0.5s ease;
-    border-radius: 1rem;
-    padding: 2rem ;
-}
-
-.testimonio_ppal iframe{
-    height:16.9rem;
-    width: 100%;
-    border-radius: 1rem; 
-}
-
-.testimonio_ppal:hover{
-    scale: 1.5;
-}
-
-.testimonios_varios{
-    background-color: bisque;
-}
-
 .testimonio-btn{
     display: block;
     background-color: var(--color-primario);
@@ -688,7 +649,7 @@ html {
 }
 
 .arrow_animation{
-     animation-name: arrow;
+    animation-name: arrow;
     animation-duration: 1s, 1s;
     animation-iteration-count: infinite, infinite; /* Infinito para ambas */
     animation-timing-function: ease-in-out, linear; /* Timing function para cada una */
@@ -718,59 +679,131 @@ html {
     }
 }
 
+.testimonios_otros{
+        margin-top: 2rem;
+    }
 
-/************************ pruebas ****************************/
-/* Estilos por defecto de la modal (oculta) */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+@media (min-width: 768px) {
+    .testimonios_otros{
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+
+.testimonio_info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3rem;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.testimonio_info img{
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none; /* Oculta la modal por defecto */
-    animation:open_modal 400ms linear 1 normal both;
+    height: 10rem;
+}
+
+.testimonio_text span{
+    font-weight: bold;
+}
+
+.testimonio_text-btn{
+    font-size: 1rem;
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+/************************ Modal ****************************/
+    /* Estilos por defecto de la modal (oculta) */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none; /* Oculta la modal por defecto */
+        animation:open_modal 400ms linear 1 normal both;
+        border-radius: 1rem;
+    }
+
+    /* ------------------------------------------- */
+    /* CLASE PARA MOSTRAR LA MODAL */
+    /* ------------------------------------------- */
+    .modal-open {
+    display: block; /* Muestra la modal cuando se activa */
+    }
+
+    @keyframes open_modal {
+        0%{
+            opacity: 0;    
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    /* Contenido de la modal */
+    .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .cerrar {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    text-decoration: none;
+    }
+
+    .cerrar:hover{
+        cursor: pointer;
+    }
+
+
+    /*********************** dialogo ******************************/
+
+    /* Estilos para el contenedor principal */
+.cuadro-con-triangulo {
+    /* La posición es clave para que el 'after' se posicione con respecto al padre */
+    position: relative; 
+    width: 100%;
+ 
+    background-color: var(--color-primario-oscuro); /* Color de fondo del cuadro */
+    padding: 20px;
     border-radius: 1rem;
 }
 
-/* ------------------------------------------- */
-/* CLASE PARA MOSTRAR LA MODAL */
-/* ------------------------------------------- */
-.modal-open {
-  display: block; /* Muestra la modal cuando se activa */
-}
+/* El pseudo-elemento que crea el triángulo */
+.cuadro-con-triangulo::after {
+    /* El 'content' es obligatorio, aunque esté vacío */
+    content: ''; 
+    /* Posicionamiento absoluto para colocar el triángulo */
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
 
-@keyframes open_modal {
-    0%{
-        opacity: 0;    
-    }
+    
+    /* BORDES TRANSPARENTES que crean la forma */
+    border-bottom: 25px solid transparent; 
+    border-right: 25px solid transparent;
+    
+    /* BORDE DE COLOR que crea el triángulo visible */
+    border-left: 25px solid var(--color-primario-oscuro ); 
+    transform: rotate(225deg);
 
-    100%{
-        opacity: 1;
-    }
-}
-
-/* Contenido de la modal */
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cerrar {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #aaa;
-  text-decoration: none;
-}
-
-.cerrar:hover{
-    cursor: pointer;
 }
