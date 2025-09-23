@@ -31,11 +31,13 @@
             </div>
             <div class="nav" >
                 <nav class="main_nav contenedor" >
+                    
                     <div class="main_nav-name">
+                        <button  class="main_nav-btn"><i class="fa-solid fa-bars"></i></button>
                         <a href="index.html"> <img src="./source/logo.png" alt="logo" class="main_nav-img"></a>
                         <h3>&nbsp;Interviniendo <br> con Fé</h3>
                     </div>
-                    <button  class="main_nav-btn"><i class="fa-solid fa-bars"></i></button>
+                    
                     <div class="main_nav-links">
                         <a href="#" class="btn">Inicio</a>
                         <a href="#" class="btn">Servicios</a>
@@ -108,23 +110,84 @@
                 
             </section>
 
-            <section class="section_testimonios contenedor">
-                <div class="testimonios">
+            <section class="section_testimonios ">
+                <div class="testimonios contenedor">
                     <h2 class="testimonios_title"> <i class="fa-solid fa-comments"></i> Voces de Transformación: Historias de Vida</h2>
                     <div class="testimonios_title-text">
                         <p>Descubre cómo, juntos, hemos logrado sembrar semillas de bienestar, restaurar la confianza y fortalecer el espíritu, demostrando que la fe es un pilar fundamental en cada paso hacia la transformación personal.</p>
-                        <a href="#" class="testimonio-btn btn"><i class="fa-solid fa-arrow-right"></i>Ver Video</a>
-                    </div>
-                    <div class="testimonios_info">
-                        <div class="testimonio_ppal">
-                            <h3>Nombre persona</h3>
-                            <iframe src="./source/testimonios.mp4" frameborder="0"></iframe>
-                            <p>hola como vas?</p>
+                        <a onclick="abrirModal('miModal')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
+
+                        <div id="miModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Historias de Vida</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="video-modal"></iframe>
+                                    <p style="text-align: left;">Hay historias que merecen ser contadas. En este video, te invitamos a escuchar los testimonios de quienes han caminado a nuestro lado y han encontrado en nuestro trabajo la fuerza para sanar, crecer y alcanzar sus metas. Cada relato es un recordatorio de que no estás solo en tu camino. Sus palabras son el reflejo más auténtico de nuestro compromiso contigo.</p>
+                                </div>
+
+                                <a onclick="cerrarModal('miModal')" class="btn testimonio-btn">Cerrar</a>   
+                            </div>
                         </div>
-                        <div class="testimonios_varios">
-                            <p>perros valiosos</p>
-                        </div>
+
                     </div>
+
+                    <div class="testimonios_otros">
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="./source/logo.png" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="./source/logo.png" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="./source/logo.png" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
                 </div>
             </section>
         </main>
