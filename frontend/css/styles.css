@@ -779,8 +779,8 @@ html {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #fff;
-        padding: 20px;
-        width: 80%;
+        /*padding: 20px;*/
+        width: 100%;
         max-width: 500px;
         border-radius: 5px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -791,11 +791,14 @@ html {
         font-family: var(--font-story);
         font-size: 2rem;
         text-align: center;
+        padding: 2rem;
     }
 
     .modal-body p{
         font-size: var(--font-text);
+        padding: 2rem;
     }
+    
     .cerrar {
     font-size: 2rem;
     font-weight: bold;
@@ -832,7 +835,7 @@ html {
     content: ''; 
     /* Posicionamiento absoluto para colocar el triángulo */
     position: absolute;
-    left: 0;
+    left: 6rem;
     bottom: -0.3rem;
 
     
