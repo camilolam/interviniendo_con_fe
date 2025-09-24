@@ -223,7 +223,9 @@ html {
     }
 
     .main_nav-links{
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         margin-top: 0;
     }
 
@@ -315,7 +317,7 @@ html {
 .header_title-btn{
     background-color: var(--color-primario);
     border-radius: 1rem;
-    margin-top: 3rem;
+   /* margin-top: 3rem;*/
 }
 
 @media (min-width: 768px) {
