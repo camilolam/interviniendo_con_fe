@@ -1,5 +1,5 @@
 const video = document.querySelector(".video-modal");
-
+let active = false;
 
 function abrirModal(idModal) {
   const modal = document.getElementById(idModal);
@@ -17,3 +17,26 @@ function cerrarModal(idModal) {
     video.src = "";
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleccionar los elementos
+    const menuBtn = document.querySelector('.main_nav-btn');
+    const navLinksContainer = document.querySelector('.main_nav-links');
+    
+
+    if (menuBtn && navLinksContainer) {
+        // 2. Asignar el evento al botón
+        menuBtn.addEventListener('click', () => {
+          console.log(active)
+            // 3. Alternar la clase 'active' para mostrar/ocultar el menú
+            if(navLinksContainer.style.display == "flex"){
+              navLinksContainer.style.display = "none";
+              console.log("estoy oprimiendo el botón");
+              
+            }else{
+              navLinksContainer.style.display = "flex";
+              console.log("estoy oprimiendo el botón");
+            }
+        });
+    }
+});
