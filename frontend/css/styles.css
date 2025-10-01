@@ -67,6 +67,7 @@ html {
 
 .btn:hover{ 
     animation:btn_animation 500ms linear 1 normal both;
+    cursor: pointer;
 }
 
 .btn_oscuro{
@@ -80,6 +81,7 @@ html {
 
 .btn_oscuro:hover{ 
     animation:btn_animation_oscuro 500ms linear 1 normal both;
+    cursor: pointer;
 }
 
 @keyframes btn_animation_oscuro {
@@ -598,6 +600,7 @@ html {
     color: var(colo);
     text-align: center;
     padding: 1rem 0 0.5rem 0;
+    margin-top: 2rem;
 }
 
 .footer_info{
@@ -704,6 +707,8 @@ html {
 
 .testimonio{
     z-index: 0; 
+    border-bottom: 0.1rem solid rgb(189, 154, 192);
+    margin-bottom: 1rem;
 }
 
 .testimonio_info{
@@ -791,7 +796,8 @@ html {
         font-family: var(--font-story);
         font-size: 2rem;
         text-align: center;
-        padding: 2rem;
+        /*padding: 2rem;*/
+
     }
 
     .modal-body p{
@@ -847,4 +853,122 @@ html {
     border-left: 25px solid var(--color-primario-oscuro ); 
     transform: rotate(225deg);
 
+}
+
+
+/*************************+ contacto ******************************/
+
+.section_contacto{
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: var(--color-primario);
+    animation:appear 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 40%;
+}
+
+.section_contacto--info{
+    background-color: var(--color-primario-oscuro);
+    text-align: center;
+    color: var(--color-primario-oscuro2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0.1rem 8px var(--color-primario-oscuro2);
+    animation:scroll_animation 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 40%;
+}
+
+
+
+.section_contacto--info p{
+    color: var(--color-primario-oscuro2);
+    font-size: 1.5rem;
+    margin: 2rem 0 0 0;
+}
+
+.section_contacto--info p:last-of-type{
+    margin: 0;
+}
+
+.section_contacto--info .section_contacto--nombre{
+    text-shadow: 0 0.2rem 8px var(--color-primario-oscuro2);
+    font-size: 5rem;
+    margin: 0;
+}
+
+.section_contacto--info i{
+    color: var(--color-primario-oscuro2);
+    font-size: 2.5rem;
+    text-shadow: 0 0.1rem 4px var(--color-primario-oscuro2);
+}
+
+.section_contacto--info .contacto_icono{
+    font-size: 10rem;
+}
+
+.section_contacto--info img{
+    width: 20rem !important;
+    height: auto !important;
+    border-radius: 50%;
+    font-size: cover;
+    box-shadow: 0 0.1rem 8px var(--color-primario);
+}
+
+@media (min-width: 768px) {
+    .section_contacto{
+
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.main_form{
+    padding: 6rem;
+    animation:scroll_animation_bio 500ms linear 1 normal both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 50%;
+    view-timeline-axis: inline;
+}
+
+.main_form-title{
+    font-family: var(--font-story);
+    font-size: var(--font_subtitle);
+    color: var(--color-primario-oscuro2);
+    text-align: center;
+}
+
+
+.main_form input{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: var(--font-text);
+    margin-top: 2rem;
+    background-color: var(--color-primario);
+    border: 0.1rem solid var(--color-primario-oscuro2-transparente);
+    color: var(--color-primario-oscuro2);
+    /*border-radius: 1rem;*/
+}
+
+.main_form input::placeholder {
+  color: var(--color-primario-oscuro2-transparente); /* Cambia el color a rojo */
+}
+
+.main_form-area{
+    height: 10rem;
+}
+
+.section_contacto img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.section_contacto input[type="submit"]{
+  border: none;
+  outline: none;
+  background-color: var(--color-primario);
+  width: 30%;
 }

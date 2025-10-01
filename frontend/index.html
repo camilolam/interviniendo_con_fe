@@ -39,12 +39,12 @@
                     </div>
                     
                     <div class="main_nav-links">
-                        <a href="#" class="btn">Inicio</a>
-                        <a href="#" class="btn">Servicios</a>
-                        <a href="#" class="btn">Profesional</a>
-                        <a href="#" class="btn">Testimonios</a>
-                        <a href="#" class="btn">Contacto</a>
-                        <a href="#" class="header_title-btn btn">Agenda tu cita</a>
+                        <a href="index.html" class="btn">Inicio</a>
+                        <a href="#section_servicios" class="btn">Servicios</a>
+                        <a href="#section_profesional" class="btn">Profesional</a>
+                        <a href="#section_testimonios" class="btn">Testimonios</a>
+                        <a href="#section_contacto" class="btn">Contacto</a>
+                        <a href="#section_contacto" class="header_title-btn btn">Agenda tu cita</a>
                     </div>      
                 </nav>
             </div>
@@ -58,7 +58,7 @@
         </header>
 
         <main>
-            <section class="contenedor section_profesional">
+            <section id="section_profesional" class="contenedor section_profesional">
                 <div class="profesional">
                     <img src="./source/mariana2.png" alt="foto profesional" class="profesional_img">
                     <div class="profesional_info">
@@ -70,17 +70,32 @@
                     <p class="profesional_bio-title"><i class="fa-solid fa-graduation-cap"></i> Trabajadora Social</p>
                     <p class="profesional_bio-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusantium sequi beatae quibusdam sint mollitia repudiandae sit sunt minima dolor! Non iusto nostrum numquam. Nulla quaerat inventore et autem hic. <br><br>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid voluptatum, voluptate corrupti et nobis eum fuga ab tenetur. Possimus totam debitis dolorum, non dicta facilis? Maxime aperiam incidunt earum id!</p>
+                    <a onclick="abrirModal('modalCV','https://www.youtube.com/embed/CC9nGE_TFiI?si=VGehh6zGfDtGypKI','video-CV')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
+
+                    <div id="modalCV" class="modal">
+                    
+                        <div class="modal-content">
+                            <a onclick="cerrarModal('modalCV','video-CV')" class="btn testimonio-btn">X</a> 
+                            
+                            <div class="modal-body">
+                               <iframe id="video-CV" width="100%" height="300" src="https://www.youtube.com/embed/CC9nGE_TFiI?si=VGehh6zGfDtGypKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
 
                     <div class="profesional_social">
-                    <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+                        <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 
             </section>
 
-            <section class="section_servicios">
+            <section id="section_servicios" class="section_servicios">
                 <div class="contenedor">
                     <h2 class="section_servicios-title">Nuestros Servicios</h2>
                     <div class="section_servicios-servicios">
@@ -110,16 +125,16 @@
                 
             </section>
 
-            <section class="section_testimonios ">
+            <section id="section_testimonios" class="section_testimonios ">
                 <div id="miModal" class="modal">
                     
                     <div class="modal-content">
-                        <a onclick="cerrarModal('miModal')" class="btn testimonio-btn">X</a> 
+                        <a onclick="cerrarModal('miModal','video-modal')" class="btn testimonio-btn">X</a> 
                         <div class="modal-header">
                             <h2>Historias de Vida</h2>
                         </div>
                         <div class="modal-body">
-                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="video-modal"></iframe>
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="video-modal"></iframe>
                             <p style="text-align: left;">Hay historias que merecen ser contadas. En este video, te invitamos a escuchar los testimonios de quienes han caminado a nuestro lado y han encontrado en nuestro trabajo la fuerza para sanar, crecer y alcanzar sus metas. Cada relato es un recordatorio de que no estás solo en tu camino. Sus palabras son el reflejo más auténtico de nuestro compromiso contigo.</p>
                         </div>
 
@@ -130,7 +145,7 @@
                     <h2 class="testimonios_title"> <i class="fa-solid fa-comments"></i> Voces de Transformación: Historias de Vida</h2>
                     <div class="testimonios_title-text">
                         <p>Descubre cómo, juntos, hemos logrado sembrar semillas de bienestar, restaurar la confianza y fortalecer el espíritu, demostrando que la fe es un pilar fundamental en cada paso hacia la transformación personal.</p>
-                        <a onclick="abrirModal('miModal')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
+                        <a onclick="abrirModal('miModal','https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY','video-modal')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
 
                         
 
@@ -191,6 +206,37 @@
 
                     </div>
                     
+                </div>
+            </section>
+
+            <section class="section_contacto" id="section_contacto">
+                <div class="section_contacto--info">
+                    <img src="./source/logo.png" alt="foto">
+                    <p> interviniendoconfe09@gmail.com</p>
+                    <p> (+57) 311-3730407</p>
+
+                    <div class="profesional_social">
+                        <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="main_form">
+                    <h2 class="main_form-title">
+                        Contactanos
+                    </h2>
+                    <form action="">
+                      
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                
+                        <input type="text" name="cel" id="cel" placeholder="celular">
+                        
+                        <input type="email" name="email" id="email" placeholder="Correo Electrónico">
+
+                        <input type="aria" name="area" id="area" placeholder="Déjanos un mensaje" class="main_form-area" aria-multiline="true">
+
+                        <input type="submit" value="Enviar" class="btn_oscuro btn_contacto">
+                    </form>
                 </div>
             </section>
         </main>
