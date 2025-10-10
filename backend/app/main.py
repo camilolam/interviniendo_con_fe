@@ -64,3 +64,5 @@ async def home():
         }
     except:
         raise HTTPException(status_code=404, detail="Página no encontrada")
+
+# esto es solo par ahacer un push  
