@@ -16,16 +16,15 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-logging.debug("****************************************************************************")
-logging.debug("A INICIADO LA APLIACION")
-logging.debug("Se instancia FastAPI")
+logging.debug("")
+logging.debug("START APP \n")
+logging.debug("FastApi object instance")
 
 app = FastAPI(
     title="Backend Interviniendo con Fé",
-    description="API construida con Routers, Middleware y Eventos. Para toda la funcionalidad de la página para Mariana Suarez, interviniendo con fe. Esperemos que todo salga super bien",
+    description="API for backend, of interviniendo con fe.",
     version="2.0.0",
     )
-logging.info("Esta instancia, nos permite usar el objeto FastAPI, para configurar el servidors")
 
 # Configuración de CORS (Permitir que el frontend acceda a la API)
 origins = [
@@ -33,7 +32,7 @@ origins = [
     "http://localhost:8000", 
     "http://localhost:80001", 
 ]
-logging.info(f"Se han configurado los siguiente CORS {origins}")
+logging.info(f"CORS: {origins}")
 
 logging.debug("Se configuran los origenes y los métodos habilitados")
 app.add_middleware(
@@ -43,24 +42,24 @@ app.add_middleware(
     allow_methods=["*"],       # Permitir todos los métodos (GET, POST, PUT, DELETE)
     allow_headers=["*"],       # Permitir todos los encabezados
 )
-logging.info("Se han configurado los origenes y los métodos habilitados")
 
 # Routers
-
+logging.debug("Add routers users, services")
 app.include_router(users.router)    
 app.include_router(services.router) 
 
+logging.debug("End configuration")
 # EndPoints
 @app.get("/", tags=["Home"])
 async def home():
-    """Verifica si el servidor está activo."""
-    logging.info("Se ingresa a la ruta home, para verificar conexión")
+    """varify if server is active"""
+    logging.info(" home: verify server")
     try:
         return {
             "status": "ok", 
             "service": "fastapi_backend",
-            "message":"La aplicación está funcionando correctamente",
-            "developer":"Camilo Cañaverl (cc_dev)",
+            "message":"succes",
+            "developer":"Camilo Cañaveral (cc_dev)",
             "company":"Interviniendo con Fé"
         }
     except:
