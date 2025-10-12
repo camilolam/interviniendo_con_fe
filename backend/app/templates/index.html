@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="16x16 32x32 48x48" href="./source/logo.png">
+        <title>Iterviniendo con Fé</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/normalize.css')}}">
+        <script src="https://kit.fontawesome.com/73add5e614.js" crossorigin="anonymous"></script>
+        <!-- Fuentes para el sitio web -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Permanent+Marker&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Story+Script&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header class="hero">
+            <div class="border_white">
+                <div class="contenedor header_contact">
+                    <p><i class="fa-solid fa-square-envelope"></i> interviniendoconfe09@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>  (+57) 311-3730407</p>
+                </div>
+            </div>
+            <div class="nav" >
+                <nav class="main_nav contenedor" >
+                    
+                    <div class="main_nav-name">
+                        <button  class="main_nav-btn"><i class="fa-solid fa-bars"></i></button>
+                        <a href="/index"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class="main_nav-img"></a>
+                        <h3>&nbsp;Interviniendo <br> con Fé</h3>
+                    </div>
+                    
+                    <div class="main_nav-links">
+                        <a href="/index" class="btn">Inicio</a>
+                        <a href="#section_servicios" class="btn">Servicios</a>
+                        <a href="#section_profesional" class="btn">Profesional</a>
+                        <a href="#section_testimonios" class="btn">Testimonios</a>
+                        <a href="#section_contacto" class="btn">Contacto</a>
+                        <a href="#section_contacto" class="header_title-btn btn">Agenda tu cita</a>
+                    </div>      
+                </nav>
+            </div>
+
+            <div class="header_title contenedor">
+                <h1>Interviniendo Con Fé</h1>
+                <!--<p>Acompañamiento integral desde tu casa.</p>-->
+                <p>Fé que transforma, acompañamiento que restaura.</p>
+                <!--<a href="#" class="header_title-btn btn">Agenda tu cita</a>-->
+            </div>
+        </header>
+
+        <main>
+            <section id="section_profesional" class="contenedor section_profesional">
+                <div class="profesional">
+                    <img src="{{ url_for('static', path='/source/mariana2.png')}}" alt="foto profesional" class="profesional_img">
+                    <div class="profesional_info">
+                        <p>Mariana Suarez</p>
+                        <p><span>Trabajadora Social</span></p>
+                    </div>
+                </div>
+                <div class="profesional_bio">
+                    <p class="profesional_bio-title"><i class="fa-solid fa-graduation-cap"></i> Trabajadora Social</p>
+                    <p class="profesional_bio-text">Hola. Soy Mariana Suarez, y mi misión es guiar a mujeres que buscan no solo resolver sus desafíos, sino también redescubrir la fuerza inquebrantable que reside en su espíritu y su fe. Como Trabajadora Social, ofrezco herramientas concretas y estrategias validadas para la gestión emocional, la resolución de conflictos y el empoderamiento personal.<br><br>
+
+                    <b> Mi Pilar Diferenciador: </b>El Acompañamiento Integral <br><br>
+                    Mi enfoque se centra en el acompañamiento integral, donde tu fe se convierte en el cimiento de tu resiliencia: <br><br>
+
+                    <b>Fundamento Espiritual:</b> Utilizo los principios de la fe y la espiritualidad como un recurso poderoso para encontrar sentido, consuelo y esperanza en momentos de crisis. Juntas, transformaremos la adversidad en un testimonio de crecimiento. <br><br>
+
+                    <b>Gestión Profesional:</b> Aplicamos metodologías rigurosas del Trabajo Social para abordar problemas prácticos (violencia, duelo, desempleo, crisis familiares), asegurando que recibas un apoyo estructurado y ético. <br><br>
+
+                    <b>Propósito y Autonomía: </b>Mi objetivo no es solo resolver el problema actual, sino ayudarte a conectar con tu propósito de vida, para que cada paso que des lo hagas desde la autonomía y la certeza de tu valor. <br><br>
+
+                    Si estás lista para dejar de sobrevivir y comenzar a prosperar con una fe firme, te invito a iniciar este camino de transformación. No estás sola. Juntas construiremos la fortaleza que necesitas para avanzar.</p>
+                    <div class="profesional_social">
+                        <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <a onclick="abrirModal('modalCV','https://www.youtube.com/embed/CC9nGE_TFiI?si=VGehh6zGfDtGypKI','video-CV')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
+
+                    
+
+
+                    <div id="modalCV" class="modal">
+                    
+                        <div class="modal-content">
+                            <a onclick="cerrarModal('modalCV','video-CV')" class="btn testimonio-btn">X</a> 
+                            
+                            <div class="modal-body">
+                               <iframe id="video-CV" width="100%" height="300" src="https://www.youtube.com/embed/CC9nGE_TFiI?si=VGehh6zGfDtGypKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+
+                            
+                        </div>
+                </div>
+                </div>
+                
+            </section>
+
+            <section id="section_servicios" class="section_servicios">
+                <div class="contenedor">
+                    <h2 class="section_servicios-title">Nuestros Servicios</h2>
+                    <div class="section_servicios-servicios">
+                        <div class="section_servicios-card">
+                            
+                            <i class="fa-solid fa-book"></i>
+                            <p><span>Adquiere tu Agenda</span></p>
+                            
+                        </div>
+
+                        <div class="section_servicios-card">
+                            
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <p><span>Paquetes de Sanación</span> </p>
+                           
+                        </div>
+
+                        <div class="section_servicios-card">
+                            
+                            <i class="fa-solid fa-user-group"></i>
+                            <p><span>Acompañamiento</span></p>
+                            
+                        </div>
+
+                        <a href="#" class="servicios-btn btn">Más Información</a>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="section_testimonios" class="section_testimonios ">
+                <div id="miModal" class="modal">
+                    
+                    <div class="modal-content">
+                        <a onclick="cerrarModal('miModal','video-modal')" class="btn testimonio-btn">X</a> 
+                        <div class="modal-header">
+                            <h2>Historias de Vida</h2>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="video-modal"></iframe>
+                            <p style="text-align: left;">Hay historias que merecen ser contadas. En este video, te invitamos a escuchar los testimonios de quienes han caminado a nuestro lado y han encontrado en nuestro trabajo la fuerza para sanar, crecer y alcanzar sus metas. Cada relato es un recordatorio de que no estás solo en tu camino. Sus palabras son el reflejo más auténtico de nuestro compromiso contigo.</p>
+                        </div>
+
+                          
+                    </div>
+                </div>
+                <div class="testimonios contenedor">
+                    <h2 class="testimonios_title"> <i class="fa-solid fa-comments"></i> Voces de Transformación: Historias de Vida</h2>
+                    <div class="testimonios_title-text">
+                        <p>Descubre cómo, juntos, hemos logrado sembrar semillas de bienestar, restaurar la confianza y fortalecer el espíritu, demostrando que la fe es un pilar fundamental en cada paso hacia la transformación personal.</p>
+                        <a onclick="abrirModal('miModal','https://www.youtube.com/embed/UnY6bGhSLRo?si=Gg4eLF8k_aF7_AMY','video-modal')" class="testimonio-btn btn modal_btn"><i class="fa-solid fa-arrow-right arrow_animation"></i>Ver Video</a>
+
+                        
+
+                    </div>
+
+                    <div class="testimonios_otros">
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="{{ url_for('static', path='/source/logo.png')}}" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="{{ url_for('static', path='/source/logo.png')}}" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonio">
+                            <div class="cuadro-con-triangulo">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime aliquid dolores explicabo dolorem nisi doloremque eveniet. Aliquid culpa dolor obcaecati tempore? Vel assumenda unde placeat nihil? Praesentium reprehenderit officiis ea.</p>
+
+                            </div>
+                            <div class="testimonio_info">
+                                <div class="testimonio_img">
+                                    <img src="{{ url_for('static', path='/source/logo.png')}}" alt="foot persona">
+                                </div>
+                                <div class="testimonio_text">
+                                    <span>Nombre persona</span>
+                                    <p>título</p>
+                                    <a href="#" class="btn_oscuro testimonio_text-btn">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section class="section_contacto" id="section_contacto">
+                <div class="section_contacto--info">
+                    <img src="{{ url_for('static', path='/source/logo.png')}}" alt="foto">
+                    <p> interviniendoconfe09@gmail.com</p>
+                    <p> (+57) 311-3730407</p>
+
+                    <div class="profesional_social">
+                        <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="main_form">
+                    <h2 class="main_form-title">
+                        Contactanos
+                    </h2>
+                    <form action="/contact_form" method="post">
+                      
+                        <input type="text" name="name" id="nombre" placeholder="Nombre" required>
+                
+                        <input type="number" name="phone" id="cel" placeholder="celular" required>
+                        
+                        <input type="email" name="email" id="email" placeholder="Correo Electrónico" required>
+
+                        <input type="aria" name="message" id="area" placeholder="Déjanos un mensaje" class="main_form-area" aria-multiline="true" >
+
+                        <input type="submit" value="Enviar" class="btn_oscuro btn_contacto">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="contenedor footer_info">
+                 <div class="main_nav-name">
+                        <a href="index.html"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class="main_nav-img"></a>
+                        <h3 style="color: black">&nbsp;Interviniendo <br> con Fé</h3>
+                    </div>
+                <div class="footer_info-text">
+                    <p><i class="fa-solid fa-square-envelope"></i> interviniendoconfe09@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>  (+57) 311-3730407</p>
+                </div>
+            </div>
+            <p>Todos los derechos reservados, <i class="fa-regular fa-copyright"></i> sAcutis.dev</p>
+        </footer>
+        <script src="{{ url_for('static', path='/js/main.js')}}"></script>
+    </body>
+</html>

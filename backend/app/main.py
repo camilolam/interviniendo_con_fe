@@ -1,11 +1,16 @@
-from fastapi import FastAPI
-from fastapi import HTTPException
+from fastapi import FastAPI,HTTPException, Request, Form, Depends
 from fastapi.responses import Response
 from fastapi.middleware.cors import CORSMiddleware 
 import logging
 from datetime import datetime
 from routers import users, services
-#from models.models import User, Service, Testimonial
+from models.models import Contact
+import os
+
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
+from typing import Annotated # Recomendado para tipado en Python 3.9+
 
 fecha_actual = datetime.now().strftime('%m-%d-%G')
 
@@ -17,7 +22,7 @@ logging.basicConfig(
 )
 
 logging.debug("")
-logging.debug("START APP \n")
+logging.debug("\n******************START APP*********************")
 logging.debug("FastApi object instance")
 
 app = FastAPI(
@@ -25,6 +30,12 @@ app = FastAPI(
     description="API for backend, of interviniendo con fe.",
     version="2.0.0",
     )
+
+static_path = os.path.join(os.path.dirname(__file__),'static/')
+templates_path = os.path.join(os.path.dirname(__file__),'templates/')
+
+app.mount('/static',StaticFiles(directory=static_path),'static')
+templates = Jinja2Templates(directory=templates_path)
 
 # Configuración de CORS (Permitir que el frontend acceda a la API)
 origins = [
@@ -48,7 +59,17 @@ logging.debug("Add routers users, services")
 app.include_router(users.router)    
 app.include_router(services.router) 
 
-logging.debug("End configuration")
+fake_db=[
+        {
+            "name":"string",
+            "phone":"String",
+            "email":"String",
+            "message":"String"
+        },
+    ]
+
+
+logging.debug("End configuration") 
 # EndPoints
 @app.get("/", tags=["Home"])
 async def home():
@@ -64,5 +85,35 @@ async def home():
         }
     except:
         raise HTTPException(status_code=404, detail="Página no encontrada")
+    
+@app.get("/index", tags=["Home"])
+async def home(request:Request):
+    return templates.TemplateResponse('index.html',
+            {
+                'request':request,
+                'message':'Bienvenido a esta página',
 
-# esto es solo par ahacer un push  
+            }
+        )
+
+@app.post("/contact_form", tags=["Home"])
+async def submit_form(request:Request, form_data: Contact = Depends(Contact.as_form)):
+
+    print(f"Datos recibidos: Nombre={form_data.name }, Email={form_data.email}")
+
+    # Ahora puedes guardar el objeto Pydantic en la DB, convertirlo a un modelo ORM, etc.
+    
+    res =  {
+        "mensaje": "Datos recibidos, validados y procesados.",
+        "nombre": form_data.name,
+        "email": form_data.email,
+        "largo_mensaje": len(form_data.message)
+    }
+
+    print(res)
+    return templates.TemplateResponse('thanks.html',
+            {
+                'request':request,
+                'message':'Bienvenido a esta página',
+            }
+        )
