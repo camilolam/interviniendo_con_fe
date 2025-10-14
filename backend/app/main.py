@@ -110,10 +110,12 @@ async def submit_form(request:Request, form_data: Contact = Depends(Contact.as_f
         "largo_mensaje": len(form_data.message)
     }
 
-    print(res)
     return templates.TemplateResponse('thanks.html',
             {
                 'request':request,
-                'message':'Bienvenido a esta página',
+                'name': form_data.name,
+                'phone':form_data.phone,
+                "email": form_data.email,
+                "message": form_data.message
             }
         )

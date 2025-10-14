@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" sizes="16x16 32x32 48x48" href="./source/logo.png">
         <title>Iterviniendo con Fé</title>
 
-        <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/styles_thanks.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', path='/css/normalize.css')}}">
         <script src="https://kit.fontawesome.com/73add5e614.js" crossorigin="anonymous"></script>
         <!-- Fuentes para el sitio web -->
@@ -23,68 +23,38 @@
     </head>
     <body>
         <header class="hero">
-            <div class="border_white">
-                <div class="contenedor header_contact">
-                    <p><i class="fa-solid fa-square-envelope"></i> interviniendoconfe09@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>  (+57) 311-3730407</p>
-                </div>
-            </div>
-            <div class="nav" >
-                <nav class="main_nav contenedor" >
-                    
-                    <div class="main_nav-name">
-                        <button  class="main_nav-btn"><i class="fa-solid fa-bars"></i></button>
-                        <a href="/index"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class="main_nav-img"></a>
-                        <h3>&nbsp;Interviniendo <br> con Fé</h3>
-                    </div> 
-                </nav>
+            <div class="contenedor header_contact ">
+                <p><i class="fa-solid fa-square-envelope"></i> interviniendoconfe09@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>  (+57) 311-3730407</p>
             </div>
 
             <div class="header_title contenedor">
-                <h1>Gracias por comunicarte con nosotros</h1>
-            </div>'
-            <section id="section_profesional" class="contenedor section_profesional">
-                <div class="profesional">
-                    <img src="{{ url_for('static', path='/source/mariana2.png')}}" alt="foto profesional" class="profesional_img">
-                    <div class="profesional_info">
-                        <p>Mariana Suarez</p>
-                        <p><span>Trabajadora Social</span></p>
+                <a href="/index"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class=""></a>
+                <div class="header_title-info">
+                    <h1>Gracias por comunicarte con nosotros</h1>
+                    <span><p>{{name}}, hemos enviado a tu correo electrónico, la confirmación de la recepción del mensaje. A la mayor brevedad nos estaremos comunicando contigo.</p>
+                    </span>
+                    <div style="text-align: left; margin: 0 auto; border-radius: 1rem; border: 1px solid black; padding: 3rem; margin-bottom: 3rem;">
+                        <p style="font-size: 2rem;"><b>Información recibida:</b></p>
+                        <p><b>Correo Electrónico: </b> {{name}}</p>
+                        <p><b>Correo Electrónico: </b> {{email}}</p>
+                        <p><b>Teléfono:</b> {{ phone}}</p>
+                        <p><b>Mensaje:</b> {{ message }} </p>
                     </div>
-                </div>
-                <div class="profesional_bio">
-                    <p class="profesional_bio-title"> Infomración</p>
-                    <p class="profesional_bio-text">
-                        No estaremos comunicando contigo, gracias por tu mensaje. Revisa el correo electrónico, recibiras un correo eletrônico con todas las instrucciones necesarias, para encontrar mayor información de nuestros servicios.
-                    </p>
-                    <div class="profesional_social">
-                        <a href="https://www.instagram.com/interviniendoconfe/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="mailto:interviniendoconfe09@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="https://wa.me/+573113730407?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    
+                   
+                   
+
+                    <a href="/index" class="header_title-btn btn_oscuro">Regresar</a>
                 </div>
                 
-            </section>
+
+            </div>
+
+            
         </header>
 
         <main>
             
         </main>
-
-        
-        <footer class="footer" >
-            <div class="contenedor footer_info">
-                 <div class="main_nav-name">
-                        <a href="index.html"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class="main_nav-img"></a>
-                        <h3 style="color: black">&nbsp;Interviniendo <br> con Fé</h3>
-                    </div>
-                <div class="footer_info-text">
-                    <p><i class="fa-solid fa-square-envelope"></i> interviniendoconfe09@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>  (+57) 311-3730407</p>
-                </div>
-            </div>
-            <p>Todos los derechos reservados, <i class="fa-regular fa-copyright"></i> sAcutis.dev</p>
-        </footer>
-        <script src="{{ url_for('static', path='/js/main.js')}}"></script>
     </body>
 </html>

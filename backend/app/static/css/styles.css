@@ -976,3 +976,17 @@ html {
   background-color: var(--color-primario);
   width: 30%;
 }
+
+
+
+/****************** página agradecimiento de contacto  **************/
+
+
+.header_contact-thanks {
+    color: var(--color-primario-oscuro2) !important;
+}
+
+.perro{
+    color: red;
+    font-size: 7rem;
+}
