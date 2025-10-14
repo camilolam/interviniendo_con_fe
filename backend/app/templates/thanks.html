@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" sizes="16x16 32x32 48x48" href="./source/logo.png">
+        <link rel="icon" type="image/png" sizes="16x16 32x32 48x48" href="{{ url_for('static', path='/source/logo.png')}}">
         <title>Iterviniendo con Fé</title>
 
         <link rel="stylesheet" href="{{ url_for('static', path='/css/styles_thanks.css')}}">
@@ -36,14 +36,11 @@
                     </span>
                     <div style="text-align: left; margin: 0 auto; border-radius: 1rem; border: 1px solid black; padding: 3rem; margin-bottom: 3rem;">
                         <p style="font-size: 2rem;"><b>Información recibida:</b></p>
-                        <p><b>Correo Electrónico: </b> {{name}}</p>
+                        <p><b>Nombre: </b> {{name}}</p>
                         <p><b>Correo Electrónico: </b> {{email}}</p>
                         <p><b>Teléfono:</b> {{ phone}}</p>
                         <p><b>Mensaje:</b> {{ message }} </p>
                     </div>
-                   
-                   
-
                     <a href="/index" class="header_title-btn btn_oscuro">Regresar</a>
                 </div>
                 
