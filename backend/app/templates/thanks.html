@@ -31,16 +31,27 @@
             <div class="header_title contenedor">
                 <a href="/index"> <img src="{{ url_for('static', path='/source/logo.png')}}" alt="logo" class=""></a>
                 <div class="header_title-info">
-                    <h1>Gracias por comunicarte con nosotros</h1>
-                    <span><p>{{name}}, hemos enviado a tu correo electrónico, la confirmación de la recepción del mensaje. A la mayor brevedad nos estaremos comunicando contigo.</p>
+                    
+                    <span><p>
+                        ¡Hola, <b>{{name}}</b>! <br><br>
+
+                        <b>¡Mensaje recibido! 🎉</b><br><br>
+
+                        Te escribimos para confirmar que hemos recibido tu mensaje correctamente. <br>
+
+                        Ya enviamos una copia de tu solicitud a tu correo electrónico para que la tengas a mano. <br>
+
+                        Nuestro equipo está trabajando. Nos pondremos en contacto contigo a la mayor brevedad posible para ayudarte. <br><br>
+
+                        <b>¡Muchas gracias por comunicarte con nosotros! </b><br></p>
                     </span>
-                    <div style="text-align: left; margin: 0 auto; border-radius: 1rem; border: 1px solid black; padding: 3rem; margin-bottom: 3rem;">
+                    <!--<div style="text-align: left; margin: 0 auto; border-radius: 1rem; border: 1px solid black; padding: 3rem; margin-bottom: 3rem;">
                         <p style="font-size: 2rem;"><b>Información recibida:</b></p>
-                        <p><b>Nombre: </b> {{name}}</p>
+                        <p><b>Nombre: </b> {{name}} {{last_name}}</p>
                         <p><b>Correo Electrónico: </b> {{email}}</p>
                         <p><b>Teléfono:</b> {{ phone}}</p>
                         <p><b>Mensaje:</b> {{ message }} </p>
-                    </div>
+                    </div>-->
                     <a href="/index" class="header_title-btn btn_oscuro">Regresar</a>
                 </div>
                 

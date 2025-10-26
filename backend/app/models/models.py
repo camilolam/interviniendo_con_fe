@@ -25,6 +25,7 @@ class Testimonial(BaseModel):
 
 class Contact(BaseModel):
     name: Annotated[str, Field(min_length=2)]
+    last_name: Annotated[str, Field(min_length=2)]
     phone: Annotated[str, Field(min_length=4)]
     email: Annotated[str, Field()]
     message: Annotated[str, Field(max_length=500)]
@@ -34,6 +35,7 @@ class Contact(BaseModel):
         cls,
         # La clave es usar Form() para cada parámetro de este método
         name: Annotated[str, Form()],
+        last_name: Annotated[str, Form()],
         phone: Annotated[str, Form()],
         email: Annotated[str, Form()],
         message: Annotated[str, Form()]
@@ -42,6 +44,7 @@ class Contact(BaseModel):
         # Se retorna la instancia del modelo, mapeando los argumentos a sus campos
         return cls(
             name=name ,
+            last_name=last_name,
             phone=phone,
             email=email,
             message=message
